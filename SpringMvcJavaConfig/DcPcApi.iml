@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="FacetManager">
-    <facet type="web" name="Web">
-      <configuration>
-        <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
-        </descriptors>
-        <webroots>
-          <root url="file://$MODULE_DIR$/web" relative="/" />
-        </webroots>
-        <sourceRoots />
-      </configuration>
-    </facet>
-    <facet type="Spring" name="Spring">
-      <configuration />
-    </facet>
-  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -39,7 +23,6 @@
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:3.2.2" level="project" />
-    <orderEntry type="library" name="Maven: ct.dc.mongodb:libmongodb:1.1.1-RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.21" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger2:2.5.0" level="project" />
@@ -68,7 +51,5 @@
     <orderEntry type="library" name="Maven: commons-httpclient:commons-httpclient:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.23" level="project" />
-    <orderEntry type="library" name="Maven: ct.dc.redis:libredis:1.0.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: ct.dc.logs:liblogs:1.1.1-RELEASE" level="project" />
   </component>
 </module>
