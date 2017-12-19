@@ -41,11 +41,11 @@
             <artifactId>mongo-java-driver</artifactId>
             <version>3.2.2</version>
         </dependency>
-        <dependency>
-            <groupId>ct.dc.mongodb</groupId>
-            <artifactId>libmongodb</artifactId>
-            <version>1.1.1-RELEASE</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>ct.dc.mongodb</groupId>-->
+            <!--<artifactId>libmongodb</artifactId>-->
+            <!--<version>1.1.1-RELEASE</version>-->
+        <!--</dependency>-->
         <!--日志打印-->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -121,16 +121,16 @@
             <version>1.2.23</version>
         </dependency>
         <!--redis-->
-        <dependency>
-            <groupId>ct.dc.redis</groupId>
-            <artifactId>libredis</artifactId>
-            <version>1.0.2.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>ct.dc.logs</groupId>
-            <artifactId>liblogs</artifactId>
-            <version>1.1.1-RELEASE</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>ct.dc.redis</groupId>-->
+            <!--<artifactId>libredis</artifactId>-->
+            <!--<version>1.0.2.RELEASE</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>ct.dc.logs</groupId>-->
+            <!--<artifactId>liblogs</artifactId>-->
+            <!--<version>1.1.1-RELEASE</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
