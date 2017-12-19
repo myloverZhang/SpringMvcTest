@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:default-servlet-handler/>
+    <context:annotation-config/>
+    <context:component-scan base-package="ct.dc.mobile.api"></context:component-scan>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
+
+    <bean class="ct.dc.mobile.api.domain.helper.AreaAppCacheUtils"></bean>
+    <bean class="ct.dc.mobile.api.domain.helper.AppDataUtils"></bean>
+    <bean class="ct.dc.mobile.api.domain.helper.AreaDataUtils"></bean>
+    <bean class="ct.dc.mobile.api.domain.helper.PromoteUtils"></bean>
+    <!--dao-->
+    <bean name="respositoryBase" class="ct.dc.mobile.api.dao.RespositoryBase"></bean>
+
+    <bean class="ct.dc.mobile.api.dao.mobiletogether.PlayTogetherActiveByDayDao" name="playTogetherActiveByDayDao"></bean>
+    <bean class="ct.dc.mobile.api.dao.mobiletogether.HappyCoinCostByDayDao" name="happyCoinCostByDayDao"></bean>
+    <bean class="ct.dc.mobile.api.dao.mobiletogether.PlayTogetherActiveRetainByDayDao" name="playTogetherActiveRetainByDayDao"/>
+    <bean name="appLoginByDayDao" class="ct.dc.mobile.api.dao.mobileapp.LoginByDayDAO"></bean>
+    <bean name="appRetainByDayDao" class="ct.dc.mobile.api.dao.mobileapp.RetainByDayDAO"></bean>
+    <bean name="appLoginByPerDayDao" class="ct.dc.mobile.api.dao.mobileapp.LoginPerDayDAO"></bean>
+    <bean name="appRegByDateDao" class="ct.dc.mobile.api.dao.mobileapp.RegByDayDAO"></bean>
+    <bean name="cityAppLoginByDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.CityAppLoinByDayDao"></bean>
+    <bean name="districtAppLoginByDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.DistrictAppLoginByDayDao"></bean>
+    <bean name="nationAppLoginByDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.NationAppLoginByDayDao"></bean>
+    <bean name="provinceAppLoginByDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.ProvinceAppLoginByDayDao"></bean>
+    <bean name="areaNationLoginByDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.AreaNationLoginByDayDao"></bean>
+    <bean name="areaNationLoginByPerDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.AreaNationLoginByPerDayDao"></bean>
+    <bean name="areaProvinceLoginByDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.AreaProvinceLoginByDayDao"></bean>
+    <bean name="areaProvinceLoginByPerDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.AreaProvinceLoginByPerDayDao"></bean>
+    <bean name="areaCityLoginByDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.AreaCityLoginByDayDao"></bean>
+    <bean name="areaCityLoginByPerDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.AreaCityLoginByPerDayDao"></bean>
+    <bean name="areaDistrictLoginByDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.AreaDistrictLoginByDayDao"></bean>
+    <bean name="areaDistrictLoginByPerDayDao" class="ct.dc.mobile.api.dao.mobilearea.login.AreaDistrictLoginByPerDayDao"></bean>
+    <bean name="areaCityRegByDayDto" class="ct.dc.mobile.api.dao.mobilearea.reg.AreaCityRegByDayDto"></bean>
+    <bean name="areaDistrictRegByDayDto" class="ct.dc.mobile.api.dao.mobilearea.reg.AreaDistrictRegByDayDto"></bean>
+    <bean name="areaNationRegByDayDao" class="ct.dc.mobile.api.dao.mobilearea.reg.AreaNationRegByDayDao"></bean>
+    <bean name="areaProvinceRegByDayDao" class="ct.dc.mobile.api.dao.mobilearea.reg.AreaProvinceRegByDayDao"></bean>
+    <bean name="hallLoginByDayDao" class="ct.dc.mobile.api.dao.mobileHall.HallLoginByDayDao"></bean>
+    <bean name="hallLoginByPerDayDao" class="ct.dc.mobile.api.dao.mobileHall.HallLoginByPerDayDao"></bean>
+    <bean name="hallOnlineByDayDao" class="ct.dc.mobile.api.dao.mobileHall.HallOnlineByDayDao"></bean>
+    <bean class="ct.dc.mobile.api.dao.mobileHall.HallRegByDayDao" name="hallRegByDayDao"></bean>
+    <bean name="channelRegALoginByDayDAO" class="ct.dc.mobile.api.dao.mobilechannel.ChannelBriefByDayDAO"></bean>
+    <bean name="channelLoginByDayDAO" class="ct.dc.mobile.api.dao.mobilechannel.ChannelLoginByDayDAO"></bean>
+    <bean name="channelRetainByDayDAO" class="ct.dc.mobile.api.dao.mobilechannel.ChannelRetainByDayDAO"></bean>
+    <!--domain-->
+
+    <bean class="ct.dc.mobile.api.domain.playtogether.AppActiveByDayDomain" name="appActiveByDayDomain">
+        <property name="iPlayTogetherActiveByDayDao" ref="playTogetherActiveByDayDao"></property>
+        <property name="iPlayTogetherActiveRetainByDay" ref="playTogetherActiveRetainByDayDao"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.domain.playtogether.AppHappyCoinCostByDayDomain" name="appHappyCoinCostByDayDomain">
+        <property name="iHappyCoinCostByDayDao" ref="happyCoinCostByDayDao"></property>
+    </bean>
+
+    <bean name="mobileAppLoginDomain" class="ct.dc.mobile.api.domain.login.MobileAppLoginDomain">
+        <property name="iLoginByDayDAO" ref="appLoginByDayDao"></property>
+        <property name="iLoginPerDayDAO" ref="appLoginByPerDayDao"></property>
+    </bean>
+    <bean name="mobileAppRegDomain" class="ct.dc.mobile.api.domain.reg.MobileAppRegDomain">
+        <property name="iRegByDayDAO" ref="appRegByDateDao"></property>
+    </bean>
+    <bean name="mobileAppRetainDomain" class="ct.dc.mobile.api.domain.retain.MobileAppRetainDomain">
+        <property name="iRetainByDayDAO" ref="appRetainByDayDao"></property>
+    </bean>
+    <bean name="mobileAppAreaDomain" class="ct.dc.mobile.api.domain.apparea.MobileAppAreaDomain">
+        <property name="iCityAppLoginByDayDao" ref="cityAppLoginByDayDao"></property>
+    </bean>
+
+    <bean name="mobileAreaAppDomain" class="ct.dc.mobile.api.domain.areaapp.MobileAreaAppDomain">
+        <property name="iCityAppLoginByDayDao" ref="cityAppLoginByDayDao"/>
+        <property name="iDistrictAppLoginByDayDao" ref="districtAppLoginByDayDao"/>
+        <property name="iNationAppLoginByDayDao" ref="nationAppLoginByDayDao"/>
+        <property name="iProvinceAppLoginByDayDao" ref="provinceAppLoginByDayDao"/>
+    </bean>
+    <bean name="mobileAreaLoginDomain" class="ct.dc.mobile.api.domain.login.MobileAreaLoginDomain">
+        <property name="iAreaNationLoginByDayDao" ref="areaNationLoginByDayDao"></property>
+        <property name="iAreaNationLoginByPerDayDao" ref="areaNationLoginByPerDayDao"></property>
+        <property name="iAreaProvinceLoginByDayDao" ref="areaProvinceLoginByDayDao"></property>
+        <property name="iAreaProvinceLoginByPerDayDao" ref="areaProvinceLoginByPerDayDao"></property>
+        <property name="iAreaCityLoginByDayDao" ref="areaCityLoginByDayDao"/>
+        <property name="iAreaCityLoginByPerDayDao" ref="areaCityLoginByPerDayDao"/>
+        <property name="iAreaDistrictLoginByDayDao" ref="areaDistrictLoginByDayDao"/>
+        <property name="iAreaDistrictLoginByPerDayDao" ref="areaDistrictLoginByPerDayDao"/>
+    </bean>
+    <bean name="mobileAreaRegDomain" class="ct.dc.mobile.api.domain.reg.MobileAreaRegDomain">
+        <property name="iAreaCityRegByDayDao" ref="areaCityRegByDayDto"/>
+        <property name="iAreaDistrictRegByDayDao" ref="areaDistrictRegByDayDto"/>
+        <property name="iAreaNationRegByDayDao" ref="areaNationRegByDayDao"/>
+        <property name="iAreaProvinceRegByDayDao" ref="areaProvinceRegByDayDao"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.domain.login.MobileHallLoginDomain" name="mobileHallLoginDomain">
+        <property name="iHallLoginByDayDao" ref="hallLoginByDayDao"/>
+        <property name="iHallLoginByPerDayDao" ref="hallLoginByPerDayDao"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.domain.online.MobileHallOnlineDomain" name="mobileHallOnlineDomain">
+        <property name="iHallOnlineByDayDao" ref="hallOnlineByDayDao"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.domain.reg.MobileHallRegDomain" name="mobileHallRegDomain">
+        <property name="iHallRegByDayDao" ref="hallRegByDayDao"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.domain.channel.MobileChannelRetainDomain" name="mobileChannelRetainDomain">
+        <property name="iChannelRetainByDayDAO" ref="channelRetainByDayDAO"></property>
+    </bean>
+    <bean class="ct.dc.mobile.api.domain.channel.MobileChannelBriefDomain" name="mobileChannelBriefDomain">
+        <property name="iChannelBriefByDayDAO" ref="channelRegALoginByDayDAO"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.domain.channel.MobileChannelLoginDomain" name="mobileChannelLoginDomain">
+        <property name="iChannelLoginByDayDAO" ref="channelLoginByDayDAO"/>
+    </bean>
+    <!--服务-->
+
+    <bean class="ct.dc.mobile.api.service.playtogether.MobileHappyCoinServiceImpl" name="mobileHappyCoinService">
+        <property name="appHappyCoinCostByDayDomain" ref="appHappyCoinCostByDayDomain"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.service.playtogether.MobilePlayTogetherActiveServiceImpl" name="mobilePlayTogetherActiveService">
+        <property name="appActiveByDayDomain" ref="appActiveByDayDomain"/>
+    </bean>
+
+    <bean name="appLoginService" class="ct.dc.mobile.api.service.login.AppLoginServiceImpl">
+        <property name="appLoginDomain" ref="mobileAppLoginDomain"></property>
+    </bean>
+    <bean name="appRegService" class="ct.dc.mobile.api.service.reg.AppRegServiceImpl">
+        <property name="mobileAppRegDomain" ref="mobileAppRegDomain"></property>
+    </bean>
+    <bean name="appRetainService" class="ct.dc.mobile.api.service.retain.AppRetainServiceImpl">
+        <property name="mobileAppRetainDomain" ref="mobileAppRetainDomain"></property>
+    </bean>
+    <bean name="appAreaLoginService" class="ct.dc.mobile.api.service.apparea.AppAreaLoginServiceImpl">
+        <property name="mobileAppAreaDomain" ref="mobileAppAreaDomain"></property>
+    </bean>
+
+    <bean name="areaAppLoginService" class="ct.dc.mobile.api.service.areaapp.AreaAppLoginServiceImpl">
+        <property name="mobileAreaAppDomain" ref="mobileAreaAppDomain"/>
+    </bean>
+    <bean name="areaLoginService" class="ct.dc.mobile.api.service.login.AreaLoginServiceImpl">
+        <property name="mobileAreaLoginDomain" ref="mobileAreaLoginDomain"></property>
+    </bean>
+    <bean name="areaRegService" class="ct.dc.mobile.api.service.reg.AreaRegServiceImpl">
+        <property name="mobileAreaRegDomain" ref="mobileAreaRegDomain"></property>
+    </bean>
+    <bean class="ct.dc.mobile.api.service.online.HallOnlineServiceImpl" name="hallOnlineService">
+        <property name="mobileHallOnlineDomain" ref="mobileHallOnlineDomain"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.service.login.HallLoginServiceImpl" name="hallLoginService">
+        <property name="mobileHallLoginDomain" ref="mobileHallLoginDomain"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.service.reg.HallRegServiceImpl" name="hallRegService">
+        <property name="mobileHallRegDomain" ref="mobileHallRegDomain"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.service.report.ReportAreaServiceImpl" name="reportAreaService">
+        <property name="mobileAreaLoginDomain" ref="mobileAreaLoginDomain"/>
+        <property name="mobileAreaRegDomain" ref="mobileAreaRegDomain"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.service.report.ReportGameServiceImpl" name="reportGameService">
+        <property name="mobileAppLoginDomain" ref="mobileAppLoginDomain"/>
+        <property name="mobileAppRegDomain" ref="mobileAppRegDomain"/>
+        <property name="mobileAppRetainDomain" ref="mobileAppRetainDomain"/>
+    </bean>
+
+    <bean class="ct.dc.mobile.api.service.channel.ChannelBriefServiceImpl" name="channelBriefService">
+        <property name="mobileChannelBriefDomain" ref="mobileChannelBriefDomain"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.service.channel.ChannelLoginServiceImpl" name="channelLoginService">
+        <property name="mobileChannelLoginDomain" ref="mobileChannelLoginDomain"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.service.channel.ChannelRetainServiceImpl" name="retainService">
+        <property name="mobileChannelRetainDomain" ref="mobileChannelRetainDomain"/>
+    </bean>
+    <!--控制器-->
+    <bean class="ct.dc.mobile.api.controller.MobilePlayTogetherController" name="mobilePlayTogetherController">
+        <property name="iMobilePlayTogetherActiveService" ref="mobilePlayTogetherActiveService"/>
+        <property name="iMobileHappyCoinService" ref="mobileHappyCoinService"/>
+    </bean>
+
+    <bean name="mobileAppController" class="ct.dc.mobile.api.controller.MobileAppController">
+        <property name="appLoginService" ref="appLoginService"></property>
+        <property name="appRegService" ref="appRegService"></property>
+        <property name="appRetainService" ref="appRetainService"></property>
+        <property name="appAreaLoginService" ref="appAreaLoginService"></property>
+    </bean>
+    <bean name="mobileAreaController" class="ct.dc.mobile.api.controller.MobileAreaController">
+        <property name="iMobileAreaLoginService" ref="areaLoginService"></property>
+        <property name="iMobileAreaRegService" ref="areaRegService"></property>
+        <property name="iMobileAreaAppLoginService" ref="areaAppLoginService"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.controller.MobileHallController" name="mobileHallController">
+        <property name="iMobileHallLoginService" ref="hallLoginService"/>
+        <property name="iMobileHallOnlineService" ref="hallOnlineService"/>
+        <property name="iMobileHallRegService" ref="hallRegService"/>
+    </bean>
+    <bean class="ct.dc.mobile.api.controller.MobileReportController" name="mobileReportController">
+        <property name="iMobileReportAreaService" ref="reportAreaService"/>
+        <property name="iMobileReportGameService" ref="reportGameService"/>
+    </bean>
+
+    <bean class="ct.dc.mobile.api.controller.MobileChannelController" name="mobileChannelController">
+        <property name="iMobileChannelBriefService" ref="channelBriefService"/>
+        <property name="iMobileChannelLoginService" ref="channelLoginService"/>
+        <property name="iMobileChannelRetainService" ref="retainService"/>
+    </bean>
+    <context:property-placeholder location="classpath*:redis.properties" ignore-unresolvable="true"></context:property-placeholder>
+    <context:property-placeholder location="classpath*:svcadress.properties" ignore-unresolvable="true"></context:property-placeholder>
+    <context:property-placeholder location="classpath*:mongo.properties" ignore-unresolvable="true"></context:property-placeholder>
+</beans>
