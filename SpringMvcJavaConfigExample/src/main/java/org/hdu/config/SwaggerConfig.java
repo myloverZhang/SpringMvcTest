@@ -19,6 +19,8 @@ import java.util.Set;
 @EnableSwagger2
 @EnableWebMvc
 public class SwaggerConfig {
+
+
     @Bean
     public Docket apis(){
         return new Docket(DocumentationType.SWAGGER_2)
